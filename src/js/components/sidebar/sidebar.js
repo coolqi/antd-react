@@ -25,7 +25,6 @@ class Sidebar extends React.Component {
 	        onClick={this.handleClick.bind(this)}
 	        style={{ width: 240 }}
 	        defaultSelectedKeys={['1']}
-	        defaultOpenKeys={['sub1']}
 	        mode="inline"
 	    >
 	        <Menu.Item key="1">

@@ -33,8 +33,9 @@ export default class Index extends React.Component {
 
 	render() {
 		const bodyStyle = {
-			marginLeft: "190px",
-			width: "calc(100vw - 205px)",
+			marginTop: "20px",
+			marginLeft: "250px",
+			width: "calc(100vw - 260px)",
 		}
 
 		if(!this.state.loginStatus){
