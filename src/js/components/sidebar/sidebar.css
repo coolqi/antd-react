@@ -1,0 +1,20 @@
+.sidebar {
+	width: 240px;
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border-right: 1px solid #e9e9e9;
+	overflow-y: auto;
+	/*background-color: #263c4e;*/
+}
+
+.logo {
+	text-align: center;
+	padding: 10px 50px;
+	font-size: 14px;
+}
+
+.logo-image {
+	max-width: 100px;
+}

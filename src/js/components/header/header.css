@@ -1,0 +1,15 @@
+.user-menu {
+	height: 44px;
+	margin-left: 240px;
+	border-bottom: 1px solid rgb(240, 240, 240);
+	display: felx;
+	display: -webkit-flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	background-color: #fff;
+}
+
+.user-link {
+	font-size: 16px;
+	margin: 10px;
+}
