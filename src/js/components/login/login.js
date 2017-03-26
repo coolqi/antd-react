@@ -34,8 +34,9 @@ export default class Login extends React.Component {
 		const username = this.state.username;
 		const password = this.state.password;
 		if (username && password) {
-			if(this.props.loginSuccess) 
-				this.props.loginSuccess(username);
+			if(true) {
+				this.props.handleSubmit(username);
+			} 
 			else {
 				message.info('虽然你登录成功了，但是没传给父组件');
 			}
