@@ -8,21 +8,14 @@ const SubMenu = Menu.SubMenu;
  		super(props);
  	}
 
- 	onClick(e) {
- 		message.info('clicked: ' + e.key);
- 		if (e.key == 'changePwd') {
- 			message.info(e.key);
- 		} 
- 		if (e.key == 'logOut') {
+ 	onClick() {
  			this.props.logOut();
  			message.info('log out');
- 		}
  	}
 
  	render() {
  		const menu = (
 			<Menu onClick={this.onClick.bind(this)}>
-				<Menu.Item key="changePwd">更改密码</Menu.Item>
 				<Menu.Item key="logOut">登出</Menu.Item> 				
 			</Menu>
 		);
