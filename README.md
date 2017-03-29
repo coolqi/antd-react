@@ -1,3 +1,7 @@
-npm install
-npm run start
-open localhost:8888
+
+# antd-react
+
+1. npm install
+2. npm run start
+3. open localhost:8888
+
