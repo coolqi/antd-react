@@ -1,6 +1,5 @@
 import * as types from '../constants/actionTypes.js';
-
-// let _loginState = sessionStorage.loginState || [];
+import store from '../store.js';
 
 const loginActions = {
 	setLogin(text){
@@ -20,12 +19,10 @@ const loginActions = {
 		}
 	},
 	getLogin() {
-		types: types.GET_LOGIN;
-		console.log('get login: ');
-		return this.store;
+		return store.getState().login.token;
 	},
 	getUsername() {
-		return this.store.getState().login.username;
+		return store.getState().login.username;
 	},
 	getLogout() {
 		return {

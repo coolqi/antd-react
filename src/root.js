@@ -8,12 +8,12 @@ import Index from './js/containers/index.js';
 import Homepage from './js/components/homepage/homepage.js';
 // import Table1 from './js/components/table1';
 // import Setting from './js/components/setting.js';
-import Store from './js/store.js';
+import store from './js/store.js';
 
 export default class Root extends React.Component {
 	render() {
 		return (
-			<Provider store={Store}>
+			<Provider store={store}>
 				<Router history = {hashHistory}>
 			        <Route path="/" component={Index}>
 				        <IndexRoute component={Homepage}/>

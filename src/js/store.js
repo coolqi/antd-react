@@ -2,17 +2,21 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 // import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import Login from './reducers/login.js';
+import loginReducer from './reducers/login.js';
 
 // const loggerMiddleware = createLogger();
 
-let Store = createStore(
+let store = createStore(
+	// if(action.type === 'SAVESTATE') {
+	// 	state = action.payload.state;
+	// };
+	// state = state || {};
 	combineReducers({
-		Login
+		login: loginReducer,
 	}),
 	applyMiddleware(
 		thunk
 	)
 );
 
-export default Store;
+export default store;
