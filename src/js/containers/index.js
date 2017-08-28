@@ -13,7 +13,7 @@ class Index extends React.Component {
 		super(props);
 		this.state = {
 			loginStatus: false
-		}
+		};
 	}
 
 	logOut() {
@@ -26,30 +26,30 @@ class Index extends React.Component {
 
 	handleSubmit(username){
 		store.dispatch(loginActions.setLogin(1)),
-		store.dispatch(loginActions.setUsername(username))
-    console.log('login status: ' + loginActions.getLogin());
-    console.log('header name: ' + loginActions.getUsername());
-    this.setState({
-    	loginStatus: true
-    })
-  }
+		store.dispatch(loginActions.setUsername(username));
+		// alert(1111);
+    // console.log('login status: ' + loginActions.getLogin());
+    // console.log('header name: ' + loginActions.getUsername());
+		this.setState({
+			loginStatus: true
+		});
+	}
 
 	render() {
 		const bodyStyle = {
-			marginTop: "20px",
-			marginLeft: "250px",
-			width: "calc(100vw - 260px)",
+			marginTop: '20px',
+			marginLeft: '250px',
+			width: 'calc(100vw - 260px)',
 		};
 
 		if(!loginActions.getLogin()){
-			return <Login handleSubmit={this.handleSubmit.bind(this)}/>
-		};
+			return <Login handleSubmit={this.handleSubmit.bind(this)}/>;
+		}
 
 		const style = {
-			height: "100%"
+			height: '100%'
 		};
 
-		console.log('lala' + loginActions.getLogin());
 		return (
 			<div style={style}>
 				<Sidebar />
@@ -58,7 +58,7 @@ class Index extends React.Component {
 					{this.props.children}
 				</div>
 			</div>  
-		)
+		);
 	}
 }
 export default Index;
