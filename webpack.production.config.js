@@ -1,15 +1,11 @@
-var debug = process.env.NODE_ENV !== 'production';
+
 var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
     context: path.join(__dirname),
-    entry: './src/root.js',
-    devtool: 'eval-source-map',
-    devServer: {
-        inline: true, //实时刷新
-        historyApiFallback: true //不跳转
-    },
+    devtool: false,
+    entry: ['./src/root.js'],
     module: {
         loaders: [{
                 test: /\.js?$/,
@@ -22,7 +18,7 @@ module.exports = {
             },
             {
                 test: /\scss$/,
-                loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
+                loader: 'style-loader!css-loader!autoprefixer-loader'
             },
             {
                 test: /\.(png|jpg)$/,
@@ -34,7 +30,12 @@ module.exports = {
         path: __dirname,
         filename: './src/bundle.js'
     },
-    plugins: debug ? [] : [
-        new webpack.optimize.DedupePlugin(),
+    plugins: [
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        }),
     ],
 };

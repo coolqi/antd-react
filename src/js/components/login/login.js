@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Input, Icon, Button, message } from 'antd';
-import "./login.css";
+import './login.css';
 
 export default class Login extends React.Component {
 	constructor(props) {
@@ -9,19 +8,19 @@ export default class Login extends React.Component {
 		this.state = {
 			username: '',
 			password: ''
-		}
+		};
 	}
 
 	getUsername(e) {
 		this.setState({
 			username: e.target.value
-		})
-	};
+		});
+	}
 
 	getPassword(e) {
 		this.setState({
 			password: e.target.value
-		})
+		});
 	}
 
 	// login
@@ -69,11 +68,11 @@ export default class Login extends React.Component {
 						onChange = {this.getPassword.bind(this)}
 						prefix={<Icon type="lock" />} />
 					<Button type="primary" onClick={this.onClick.bind(this)}>
-					  登录
-					  <span class="pt-icon-standard pt-icon-arrow-right pt-align-right"></span>
+						登录
+						<span class="pt-icon-standard pt-icon-arrow-right pt-align-right"></span>
 					</Button>
 				</center>
 			</div>
-		)
+		);
 	}
 }
