@@ -26,18 +26,11 @@ export default class Login extends React.Component {
 	// login
 	onClick(e) {
 		e.preventDefault();
-		// const username = ReactDOM.findDOMNode(this.refs.user).value;
-		// const password = ReactDOM.findDOMNode(this.refs.passw).value;
 		const username = this.state.username;
 		const password = this.state.password;
 		if (username && password) {
-			if(true) {
 				this.props.handleSubmit(username);
 				message.info('登录成功');
-			} 
-			else {
-				message.info('虽然你登录成功了，但是没传给父组件');
-			}
 		} else {
 			message.warning('Username and password are required!');
 		}
