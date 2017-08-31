@@ -2,7 +2,7 @@
 	height: 44px;
 	margin-left: 240px;
 	border-bottom: 1px solid rgb(240, 240, 240);
-	display: felx;
+	display: flex;
 	display: -webkit-flex;
 	flex-direction: row;
 	justify-content: flex-end;
@@ -12,4 +12,8 @@
 .user-link {
 	font-size: 16px;
 	margin: 10px;
+}
+
+.user-link i {
+	margin-left: 8px;
 }

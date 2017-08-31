@@ -1,83 +1,53 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import ReactDOM from 'react-dom';
-import Login from '../components/login/login.js';
+import { hashHistory } from 'react-router';
+import { Breadcrumb, message } from 'antd';
+import LoginContainer from './login.js';
 import Sidebar from '../components/sidebar/sidebar.js';
 import Header from '../components/header/header.js';
-import store from '../store.js';
-
-import loginActions from '../actions/login.js';
 
 class Index extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			loginStatus: false
+			login: false
 		};
+	}
+
+	handleLogin() {
+		this.setState({
+			login: true
+		});
 	}
 
 	logOut() {
-		console.log('halo');
-		this.setState ({
-			loginStatus: false
-		});
-		store.dispatch(loginActions.setLogin(0));
-	}
-
-	handleSubmit(username){
-		store.dispatch(loginActions.setLogin(1)),
-		store.dispatch(loginActions.setUsername(username));
-		// alert(1111);
-    // console.log('login status: ' + loginActions.getLogin());
-    // console.log('header name: ' + loginActions.getUsername());
 		this.setState({
-			loginStatus: true
+			login: false
 		});
+		sessionStorage.removeItem('token');
+		hashHistory.push('/');
+		message.info('已登出');
 	}
 
 	render() {
-		const bodyStyle = {
-			marginTop: '20px',
-			marginLeft: '250px',
-			width: 'calc(100vw - 260px)',
-		};
-
-		if(!loginActions.getLogin()){
-			return <Login handleSubmit={this.handleSubmit.bind(this)}/>;
+		if(!sessionStorage.getItem('token')){
+			return <LoginContainer handleLogin={this.handleLogin.bind(this)}/>;
 		}
 
-		const style = {
-			height: '100%'
-		};
+		const Homepage = () => (
+			<div className='body-content'>
+				<Breadcrumb routes={this.props.routes} params={this.props.params} />
+				{ this.props.children }			
+			</div>
+		);
 
 		return (
-			<div style={style}>
+			<div className='body-all'>
 				<Sidebar />
-				<Header username={loginActions.getUsername()} logOut={this.logOut.bind(this)}/>
-				<div style={bodyStyle}>
-					{this.props.children}
-				</div>
+				<Header logOut={this.logOut.bind(this)}/>
+				<Homepage />
 			</div>  
 		);
 	}
 }
+
 export default Index;
-// function mapStateToProps(state) {
-// 	return {
-// 		username: state.username,
-// 		token: state.token
-// 	};
-// }
-
-// function mapDispatchToProps(dispatch) {
-// 	return {
-// 		loginSuccess: () => dispatch(loginActions.setLogin()),
-// 		setUsername: username => dispatch(loginActions.setUsername(username)),
-// 		logOut: () => dispatch(loginActions.getLogout()),
-// 	}
-// }
-
-// export default connect
-// 	 (mapStateToProps,
-// 	 mapDispatchToProps
-// 	 )(Index);

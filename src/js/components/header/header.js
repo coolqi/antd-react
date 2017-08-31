@@ -21,7 +21,7 @@ class Header extends React.Component {
 		<div className="user-menu">
 			<Dropdown overlay={menu} className="user-dropdown">
 				<a className="user-link" href="#">
-					{this.props.username}<Icon type="down" />
+					{sessionStorage.getItem('username')}<Icon type="down" />
 				</a>
 			</Dropdown>
 		</div>

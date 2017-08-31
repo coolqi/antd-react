@@ -4,13 +4,21 @@
 	padding-top: 15%;
 }
 
+/*绝对垂直居中*/
 .login-box {
 	background-color: #fefefe;
 	box-shadow: 0 0 100px rgba(0,0,0,.08);
 	opacity: 0.8;
 	width: 270px;
+	height: 300px;
 	padding: 30px 20px;
-	margin: 0 auto;
+	margin: auto;
+	position: absolute; 
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
 }
 
 .login-logo{ 
@@ -24,4 +32,8 @@
 
 .login-input {
 	height: 40px;
+}
+
+.login-box button {
+	margin-top: 10px;
 }
