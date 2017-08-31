@@ -25,6 +25,7 @@
 * 新建文件夹src存放所有的js和css代码
 * src/root.js为程序入口，页面所有路径和对应的内容在此文件进行设置
 * redux是为了方便api数据的保存读取，在项目中由store, action, reducer, container组成，模板里只有table的数据用到了redux作为示例
+* 使用npm start运行，web-dev-server可以实现代码改动进行自动刷新，方便代码改动与调试
 
 
 之后想到什么还会继续添加，如果有不对的地方欢迎大家给我指正~

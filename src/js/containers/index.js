@@ -4,6 +4,7 @@ import { Breadcrumb, message } from 'antd';
 import LoginContainer from './login.js';
 import Sidebar from '../components/sidebar/sidebar.js';
 import Header from '../components/header/header.js';
+import '../../css/index.css';
 
 class Index extends React.Component {
 	constructor(props){

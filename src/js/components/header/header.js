@@ -20,7 +20,7 @@ class Header extends React.Component {
 		return (
 		<div className="user-menu">
 			<Dropdown overlay={menu} className="user-dropdown">
-				<a className="user-link" href="#">
+				<a className="user-link" href="#" >
 					{sessionStorage.getItem('username')}<Icon type="down" />
 				</a>
 			</Dropdown>

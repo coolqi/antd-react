@@ -8,7 +8,7 @@
  */
 
 const menu = [{
-    key: '',
+    key: '#',
     name: '首页'
   },
   {

@@ -31,7 +31,9 @@ module.exports = {
         filename: './src/bundle.js'
     },
     plugins: [
+        /* 插件 extract-text-webpack-pluginfor OccurenceOrder, UglifyJS plugins, ExtractTextPlugin */
         new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.BannerPlugin('大Q版权所有，翻版必究'),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
